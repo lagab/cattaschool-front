@@ -1,11 +1,25 @@
 {
-  "extends":[
-    "next/core-web-vitals",
-    "plugin:prettier/recommended",
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
     "plugin:storybook/recommended",
-    "prettier"
+    "plugin:typescript-sort-keys/recommended",
+    "prettier",
+    "next/core-web-vitals"
   ],
-  "rules": {
-    "prefer-const": "error"
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "sort-destructure-keys",
+    "typescript-sort-keys"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   }
 }
