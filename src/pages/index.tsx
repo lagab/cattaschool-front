@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from '../../styles/Home.module.css';
 import styled from 'styled-components';
 import Header from '../common/components/header/header.component';
+import Footer from '../common/components/footer/footer.component';
 
-export const Title = styled.h1`
-`
+export const Title = styled.h1``;
 
 const Home: NextPage = () => {
   return (
@@ -18,11 +18,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-      <Header></Header>
+        <Header></Header>
         <Title className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </Title>
-       
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -59,19 +58,7 @@ const Home: NextPage = () => {
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 };

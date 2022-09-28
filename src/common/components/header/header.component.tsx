@@ -1,9 +1,11 @@
-import { MenuItem } from '@material-ui/core';
+import { Badge, IconButton, MenuItem } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import Icon from '../icon/icon.component';
-import { IconType } from '../icon/icon.type';
 import {
   Menu,
   NavBar,
@@ -39,11 +41,16 @@ const Header: React.FC = ({}) => {
         </NavLogo>
         <NavBar sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (
-            <StyledButton key={page} onClick={() => console.log('clicked')}>
+            <StyledButton
+              key={page}
+              sx={{ color: 'inherit' }}
+              onClick={() => console.log('clicked')}
+            >
               {page}
             </StyledButton>
           ))}
           <StyledButton
+            sx={{ color: 'inherit' }}
             id="demo-positioned-button"
             aria-controls={open ? 'demo-positioned-menu' : undefined}
             aria-haspopup="true"
@@ -76,25 +83,27 @@ const Header: React.FC = ({}) => {
             disableElevation
             disableRipple
           >
-            <Icon iconType={IconType.USER} />
+            <PersonIcon />
             connexion
           </StyledButton>
           <Link href="/google">
             <a title="search">
-              <Icon iconType={IconType.SEARCH} classes="regular" />
+              <SearchIcon />
             </a>
           </Link>
           <Link href="/account">
             <a title="Mon compte">
-              <Icon iconType={IconType.USER} />
+              <PersonIcon />
             </a>
           </Link>
           <Link href="/">
-            <Icon iconType={IconType.HEART} />
+            <FavoriteBorderIcon />
           </Link>
-          <Link href="/">
-            <Icon iconType={IconType.BASKET} />
-          </Link>
+          <IconButton aria-label="show basket" color="inherit">
+            <Badge badgeContent={4} color="primary">
+              <ShoppingBagOutlinedIcon />
+            </Badge>
+          </IconButton>
         </ShortcutNav>
       </StyledHeader>
       <div>header</div>

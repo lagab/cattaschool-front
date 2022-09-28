@@ -1,4 +1,4 @@
-import { Box, Button, Popover } from '@material-ui/core';
+import { Box, Button, Popover } from '@mui/material';
 import styled from 'styled-components';
 
 export const TopHeader = styled.div`
